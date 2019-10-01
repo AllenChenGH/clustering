@@ -87,20 +87,20 @@ def generate_k(data_set, k):
     """
     element_number = len(data_set)
     centers = []
-    random = []
+    random_list = []
 
-    if (k > element_number - 1):
+    if k > element_number - 1:
         raise ValueError("k >= n!")
 
     for i in range(k):
-        while (True):
+        while True:
             temp = random.randint(0, element_number - 1)
-            if temp not in random:
-                random.append(temp)
+            if temp not in random_list:
+                random_list.append(temp)
                 break
 
-    for item in random:
-        centers.append(data_set[item])
+    for i in random_list:
+        centers.append(data_set[i])
 
     return centers
 
